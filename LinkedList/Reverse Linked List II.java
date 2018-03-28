@@ -7,8 +7,7 @@ to revert Km...Kn,you want to put Km+1 between Km-1 and Km  ,so the link would b
  ...Km-1 --> Km+1 --> Km --> Km+2 ... Kn ...,
  and then you want to put  Km+2 between Km-1 and Km+1 ,so the link would be  
  ...Km-1 --> Km+2 --> Km+1 --> Km --> Km+3 ... Kn ...,  etc, until you put Kn between Km-1 and Kn-1. so the link would be ...Km-1--> Kn--> Kn-1 ....Km -->Kn+1 ...
-
-Complexity Analysis :Time Complexity O(n)(now n is not the length of the link ,but the given number n), Space complexity O(1)
+Complexity Analysis :Time Complexity O(), Space complexity O()
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -19,16 +18,16 @@ Complexity Analysis :Time Complexity O(n)(now n is not the length of the link ,b
  */
 class Solution {
      if(head == null) return null;
-    ListNode dummy = new ListNode(0); // create a dummy node to mark the head of this list
-    dummy.next = head;
-    ListNode pre = dummy; // make a pointer pre as a marker for the node before reversing( to mark Km-1)
+    ListNode fakeHead = new ListNode(0); // create a fakeHead node to mark the head of this list
+    fakeHead.next = head;
+    ListNode pre = fakeHead; // make a pointer pre as a marker for the node before reversing( to mark Km-1)
     for(int i = 0; i<m-1; i++) pre = pre.next;
     
     ListNode start = pre.next; //  
     ListNode then = start.next; //  
     
     // 1 - 2 -3 - 4 - 5 ; m=2; n =4 ---> pre = 1, start = 2, then = 3
-    // dummy-> 1 -> 2 -> 3 -> 4 -> 5
+    // fakeHead-> 1 -> 2 -> 3 -> 4 -> 5
     
     for(int i=0; i<n-m; i++)
     {
@@ -42,8 +41,8 @@ class Solution {
         then = start.next;
     }
     
-    // first reversing : dummy->1 - 3 - 2 - 4 - 5; pre = 1, start = 2, then = 4
-    // second reversing: dummy->1 - 4 - 3 - 2 - 5; pre = 1, start = 2, then = 5 (finish)
+    // first reversing : fakeHead->1 - 3 - 2 - 4 - 5; pre = 1, start = 2, then = 4
+    // second reversing: fakeHead->1 - 4 - 3 - 2 - 5; pre = 1, start = 2, then = 5 (finish)
     
-    return dummy.next;
+    return fakeHead.next;
 }
