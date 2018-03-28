@@ -3,7 +3,7 @@ Example :
    Given: 1 --> 2 --> 6 --> 3 --> 4 --> 5 --> 6, val = 6
    Return: 1 --> 2 --> 3 --> 4 --> 5
    Thought : if node.val == val  (the node before this node).next = (this node).next;  for the first node, you need a node before it, new one;
-   Complexity Analysis :Time Complexity O(n), Space complexity O(1)
+   Complexity Analysis :Time Complexity O(n), Space complexity O(n),The extra space comes from implicit stack space due to recursion. The recursion could go up to nn levels deep.
 /**
  * Definition for singly-linked list.
  * public class ListNode {
