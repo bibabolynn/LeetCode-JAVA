@@ -50,6 +50,31 @@ public ListNode reverseList(ListNode head) {
     }
     return prev;
 }
+Thought :given a linkedlist ...Km-1 --> Km --> Km+1 ... Kn ..., 
+to revert Km...Kn,you want to put Km+1 between Km-1 and Km  ,so the link would be 
+ ...Km-1 --> Km+1 --> Km --> Km+2 ... Kn ...,
+ and then you want to put  Km+2 between Km-1 and Km+1 ,so the link would be  
+ ...Km-1 --> Km+2 --> Km+1 --> Km --> Km+3 ... Kn ...,  etc,
+until you put Kn between Km-1 and Kn-1. so the link would be ...Km-1--> Kn--> Kn-1 ....Km -->Kn+1 ...
+  public ListNode reverseList(ListNode head) {
+       if(head == null || head.next == null){
+          return head;
+       }
+       ListNode fakeHead = new ListNode(0);
+       fakeHead.next = head;
+        ListNode pre = fakeHead;
+       ListNode curr = head;
+        ListNode next = head.next;
+       while(next != null){
+         curr.next = next.next;
+         next.next = pre.next;
+           pre.next = next;
+           next = curr.next;
+       }
+       
+       return fakeHead.next;
+        
+    }
 
 Thought : 
 Assume from node nk+1 to nm had been reversed and you are at node nk.n1 → … → nk-1 → nk → nk+1 ← … ← nm,We want nk+1’s next node to point to nk.
