@@ -17,7 +17,8 @@ Complexity Analysis :Time Complexity O(), Space complexity O()
  * }
  */
 class Solution {
-     if(head == null) return null;
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+         if(head == null) return null;
     ListNode fakeHead = new ListNode(0); // create a fakeHead node to mark the head of this list
     fakeHead.next = head;
     ListNode pre = fakeHead; // make a pointer pre as a marker for the node before reversing( to mark Km-1)
@@ -45,4 +46,5 @@ class Solution {
     // second reversing: fakeHead->1 - 4 - 3 - 2 - 5; pre = 1, start = 2, then = 5 (finish)
     
     return fakeHead.next;
+    }
 }
