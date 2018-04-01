@@ -55,3 +55,7 @@ class Solution {
     }
     
 }
+
+
+if you want the original list unchanged ,
+you will have to  revert the first half back and point the end node of the first half list to the head of the second half of the list
