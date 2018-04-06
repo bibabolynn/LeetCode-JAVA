@@ -54,7 +54,9 @@ Thought :  (from discuss @youshan)
     dummy:  1 -> 0 -> 0 -> 0 -> 9 -> 0
                                     tail
                                     lastnot9node                         
-Complexity Analysis :Time Complexity O(), Space complexity O()
+Complexity Analysis :
+Time Complexity O(2n+m+k) n is the length of the longer list, m is the length of the shorter list and k is less than n,
+Space complexity O(1)
 
 /**
  * Definition for singly-linked list.
