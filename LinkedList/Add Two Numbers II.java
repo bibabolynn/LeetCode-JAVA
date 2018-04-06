@@ -56,7 +56,7 @@ Thought :  (from discuss @youshan)
                                     lastnot9node                         
 Complexity Analysis :
 Time Complexity O(2n+m+k) n is the length of the longer list, m is the length of the shorter list and k is less than n,
-Space complexity O(1)
+Space complexity O(n+1) for new nodes in new list
 
 /**
  * Definition for singly-linked list.
