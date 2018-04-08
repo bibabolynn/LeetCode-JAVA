@@ -17,7 +17,7 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
 
 Thought :  find the mid node,make it root.
 
-Complexity Analysis :Time Complexity O(nlogn), Space complexity O(n),space for TreeNode, nlogn recursive call stack space
+Complexity Analysis :Time Complexity O(nlogn), Space complexity O(n),space for TreeNode, logn recursive call stack space
 
 /**
  * Definition for singly-linked list.
