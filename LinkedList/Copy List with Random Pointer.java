@@ -52,7 +52,7 @@ public class Solution {
 
 		// Third round: restore the original list, and extract the copy list.
 		iter = head;
-		RandomListNode newHead = new newHead(0);//head of copy list
+		RandomListNode newHead = new RandomListNode(0);//head of copy list
 		RandomListNode copy, curr = newHead;
 
 		while (iter != null) {
