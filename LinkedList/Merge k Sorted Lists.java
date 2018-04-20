@@ -12,11 +12,15 @@ Output: 1->1->2->3->4->4->5->6
 
 https://leetcode.com/problems/merge-k-sorted-lists/description/
 
-Thought : 递归，2个2个的向上merge
+Thought : 递归，2个2个的向上merge， 把lists[0]和lists[1] merge到list[0]上，list[2]和list[3] merge到 list[2]上，...,依次类推，然后第二遍循环 merge list[0] 和 list[2] 到 list[0]上，.... 依次循环
 
 Complexity Analysis :
-Time Complexity O(mlogn),
-Space complexity O(nlogn),n is the length of lists,m is the total length of all lists in lists
+ime complexity : O(Nlogk) where k is the number of linked lists.N is the total number of result list
+
+We can merge two sorted linked list in O(n) time where n is the total number of nodes in two lists.
+Sum up the merge process and we can get:O(Nlogk)
+Space complexity : O(1)
+
 
 /**
  * Definition for singly-linked list.
@@ -34,19 +38,14 @@ class Solution {
          if( lists.length == 1){
            return lists[0];
          }
-        
-         ListNode[] first = new ListNode[lists.length/2];
-         ListNode[]  second = new ListNode[lists.length - lists.length/2];
-         for(int i = 0;i<lists.length;i++){
-            if(i<lists.length/2){
-               first[i] = lists[i];
-            }else{
-               second[i-lists.length/2] = lists[i];
-            }
-         	
-         }
-        
-         return merge(mergeKLists(first),mergeKLists(second));
+        int interval = 1;
+        while(interval < lists.length){
+          for(int i = 0; i< lists.length - interval; i +=interval*2){
+            lists[i] = merge(lists[i],lists[i+interval]);
+          }
+          interval *= 2;
+        }
+        return lists[0];
         
     }
     public ListNode merge(ListNode l1,ListNode l2){
