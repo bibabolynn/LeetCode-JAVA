@@ -44,13 +44,12 @@ Thought : 二叉搜索树，也称有序二叉树,排序二叉树，是指一棵
 3. 任意节点的左、右子树也分别为二叉查找树。
 
 4. 没有键值相等的节点。
-
-Thought: Recursion
+Recursion
 
 Complexity Analysis :
-Time Complexity: O(N)O(N), where NN is the total number of nodes in the given tree. We visit each node at most once.
+Time Complexity: O(N), where N is the total number of nodes in the given tree. We visit each node at most once.
 
-Space Complexity: O(N)O(N). Even though we don't explicitly use any additional memory, the call stack of our recursion could be as large as the number of nodes in the worst case.
+Space Complexity: O(N). Even though we don't explicitly use any additional memory, the call stack of our recursion could be as large as the number of nodes in the worst case.
 
 /**
  * Definition for a binary tree node.
