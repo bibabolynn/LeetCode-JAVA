@@ -112,7 +112,7 @@ Reverse Morris Traversal Example
 
 The figure above shows an example of the modified tree during a reverse Morris traversal. Left pointers are illustrated in blue and right pointers in red. Dashed edges indicate temporary links generated at some point during the algorithm (which will be erased before it terminates). Notice that blue edges can be dashed, as we always exploit the empty left pointer of successor nodes. Additionally, notice that every node with a right subtree has a link from its in-order successor.
 
-![image](https://user-images.githubusercontent.com/22643660/39337381-3f6e6506-49ef-11e8-8658-6bc730fce860.png)
+
 Complexity Analysis
 
 Time complexity : O(n)
