@@ -47,12 +47,12 @@ Space Complexity: O(n) due to recursion.
 public class Solution {
     public int pathSum(TreeNode root, int sum) {
         if (root == null) return 0;
-        return pathSumFrom(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);
+        return pathSumFrom(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum);//path 包含当前节点和path不包含当前节点（不包含的又可以从左子树找，或者从右子树找）
     }
     
     private int pathSumFrom(TreeNode node, int sum) {
         if (node == null) return 0;
-        return (node.val == sum ? 1 : 0) 
-            + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);
+        return (node.val == sum ? 1 : 0) //node.val == sum  说明我们已经找到了一条
+            + pathSumFrom(node.left, sum - node.val) + pathSumFrom(node.right, sum - node.val);//继续找下去是因为可能下面的子节点的值可能相加为0
     }
 }
