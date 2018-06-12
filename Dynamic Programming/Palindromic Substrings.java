@@ -73,8 +73,7 @@ class Solution {
       
             if (i < right)
                 Z[i] = Math.min(right - i, Z[2 * center - i]);//>=right-i, =Z[j],半径小的那个，是确定对称的
-            while (A[i + Z[i] + 1] == A[i - Z[i] - 1])//向外循环验证，the while loop only checks the condition more than once when Z[i] = right - i.because if Z[i]=Z[j] ,等式就不会成立，就会跳出来
-            In that case, for each time Z[i] += 1, it increments right, and right can only be incremented up to 2*N+2 times. 因为right是半径，半径最长就是字符串的长度了
+            while (A[i + Z[i] + 1] == A[i - Z[i] - 1])//向外循环验证，the while loop only checks the condition more than once when Z[i] = right - i.because if Z[i]=Z[j] ,等式就不会成立，就会跳出来   In that case, for each time Z[i] += 1, it increments right, and right can only be incremented up to 2*N+2 times. 因为right是半径，半径最长就是字符串的长度了
                 Z[i]++;
             if (i + Z[i] > right) {
                 center = i;
