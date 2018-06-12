@@ -41,7 +41,7 @@ class Solution {
 方法2：Manacher's Algorithm
 Thought:
   /**
-	to explain Z[i] = Math.min(right - i, Z[2 * center - i]);
+	to explain Z[i] = Math.min(right - i, Z[2 * center - i]); https://www.felix021.com/blog/read.php?2040
     记j = 2 * center - i，也就是说 j 是 i 关于 center 的对称点(j = center - (i - center))
     if (right - i > Z[j])    当 right - i > Z[j] 的时候，以A[j]为中心的回文子串包含在以A[center]为中心的回文子串中，由于 i 和 j 对称，以A[i]为中心的回文子串必然包含在以A[center]为中心的回文子串中，所以必有 Z[i] = Z[j]
      	Z[i] = Z[j];
