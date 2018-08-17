@@ -56,13 +56,13 @@ public class Solution {
     }
 }
 
-二维的
+二维的  dpdp[i][j] is used to store the maximum effective score possible for the subarray nums[i,j]
 public class Solution {
     public boolean PredictTheWinner(int[] nums) {
         int[][] dp = new int[nums.length + 1][nums.length];
         for (int s = nums.length; s >= 0; s--) {
             for (int e = s + 1; e < nums.length; e++) {
-                int a = nums[s] - dp[s + 1][e];
+                int a = nums[s] - dp[s + 1][e];  //为什么都是- 呢，因为每个格子要么代表player1 的分数要么代表player2的分数,轮到player1的时候要减去player2的分数，轮到player2的时候要减去player1的分数
                 int b = nums[e] - dp[s][e - 1];
                 dp[s][e] = Math.max(a, b);
             }
