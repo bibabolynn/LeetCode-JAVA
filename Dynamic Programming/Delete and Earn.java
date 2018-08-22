@@ -33,7 +33,7 @@ class Solution {
         int[] count = new int[10001];
         for (int x: nums) count[x]++;
         int avoid = 0, //the points without using prev
-		using = 0, the points using prev
+		using = 0, //the points using prev
 		prev = -1;// previously largest value
 
         for (int k = 0; k <= 10000; ++k) {
