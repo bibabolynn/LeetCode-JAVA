@@ -63,3 +63,20 @@ class Solution {
   }
 }
 
+
+class Solution:
+    def uniquePaths(self, m, n):
+        """
+        :type m: int
+        :type n: int
+        :rtype: int
+        """
+        dp = [0 for i in range(m)]
+        for i in range(n):
+            for j in range(m):
+                if i==0 or j==0:
+	                dp[j] = 1
+                else: 
+                    dp[j] = dp[j-1] + dp[j]
+        return dp[m-1]
+
